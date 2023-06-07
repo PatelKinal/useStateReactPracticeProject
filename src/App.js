@@ -4,16 +4,17 @@ import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 import Stack from "@mui/material/Stack";
 import AddIcon from "@mui/icons-material/Add";
-import { useState } from "react";
 import DeleteIcon from "@mui/icons-material/Delete";
+import { useState } from "react";
 
 function App() {
-  const [form, setForm] = useState({});
+  const [form, setForm] = useState({ name: "", email: "" });
   const [data, setData] = useState([]);
 
   const addData = () => {
     setData([...data, form]);
-    setForm({});
+    setForm(form);
+    setForm({ name: "", email: "" });
   };
 
   const removeItem = (index) => {
@@ -48,8 +49,6 @@ function App() {
           </Button>
         </Stack>
       </div>
-
-      {/* {Data} */}
       <div className="data">
         <div className="data_val">
           <h4>Name</h4>
